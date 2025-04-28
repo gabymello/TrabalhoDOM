@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos e Interatividade</title>
+    <style>
+        #quadrado {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+
+        #erro-email {
+            color: red;
+            margin-top: 10px;
+        }
+
+        #contador {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <button id="botao-contador">Contar Cliques</button>
+    <h3 id="contador">Contador: 0</h3>
+
+    <hr>
+
+    
+    <div id="quadrado"></div>
+
+    <hr>
+
+    
+    <form id="formulario">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="erro-email"></div>
+
+    <script>
+        
+        let contador = 0;
+        const botaoContador = document.getElementById('botao-contador');
+        const textoContador = document.getElementById('contador');
+
+        botaoContador.addEventListener('click', function() {
+            contador++;
+            textoContador.textContent = `Contador: ${contador}`;
+        });
+
+       
+        const quadrado = document.getElementById('quadrado');
+
+        quadrado.addEventListener('mouseover', function() {
+            quadrado.style.backgroundColor = 'red';
+        });
+
+        quadrado.addEventListener('mouseout', function() {
+            quadrado.style.backgroundColor = 'lightblue';
+        });
+
+       
+        const formulario = document.getElementById('formulario');
+        const erroEmail = document.getElementById('erro-email');
+
+        formulario.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            const email = document.getElementById('email').value.trim();
+
+            if (email === '') {
+                erroEmail.textContent = 'Por favor, insira um email válido.';
+            } else {
+                erroEmail.textContent = '';
+                alert('Formulário enviado com sucesso!');
+                formulario.reset(); 
+            }
+        });
+    </script>
+
+</body>
+</html>

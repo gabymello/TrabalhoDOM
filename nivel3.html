@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Classes e Eventos</title>
+    <style>
+        /* Estilo para a classe adicionada */
+        .estilo-destacado {
+            border: 2px solid blue;
+            color: red;
+            padding: 10px;
+            background-color: #f0f8ff;
+        }
+
+        #mensagem {
+            margin-top: 15px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+   
+    <p id="meu-paragrafo">Este parágrafo vai ganhar/retirar estilos.</p>
+    <button id="botao-adicionar">Adicionar Estilo</button>
+    <button id="botao-remover">Remover Estilo</button>
+
+    <hr>
+
+    
+    <form id="form-saudacao">
+        <label for="nome">Digite seu nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="mensagem"></div>
+
+    <script>
+        
+        const paragrafo = document.getElementById('meu-paragrafo');
+        const botaoAdicionar = document.getElementById('botao-adicionar');
+        botaoAdicionar.addEventListener('click', function() {
+            paragrafo.classList.add('estilo-destacado');
+        });
+
+        
+        const botaoRemover = document.getElementById('botao-remover');
+        botaoRemover.addEventListener('click', function() {
+            paragrafo.classList.remove('estilo-destacado');
+        });
+
+        
+        const form = document.getElementById('form-saudacao');
+        const mensagem = document.getElementById('mensagem');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            const nome = document.getElementById('nome').value.trim();
+            if (nome) {
+                mensagem.textContent = `Olá, ${nome}!`;
+            } else {
+                mensagem.textContent = 'Por favor, insira um nome.';
+            }
+        });
+    </script>
+
+</body>
+</html>
