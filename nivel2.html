@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Modificando Conteúdo e Estilos</title>
+    <style>
+        #meu-paragrafo {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Mudar texto do botão -->
+    <button id="botao-clique">Clique aqui</button>
+
+    <br><br>
+
+    <!-- 2. Mudar conteúdo HTML de uma div -->
+    <div id="caixa">Conteúdo original</div>
+    <button id="botao-mudar-conteudo">Mudar Conteúdo</button>
+
+    <br><br>
+
+    <!-- 3. Modificar múltiplos estilos de um parágrafo -->
+    <p id="meu-paragrafo">Este é um parágrafo para modificar.</p>
+    <button id="botao-estilizar">Modificar Estilos</button>
+
+    <script>
+        // 1. Mudar o texto do botão
+        const botaoClique = document.getElementById('botao-clique');
+        botaoClique.addEventListener('click', function() {
+            botaoClique.textContent = 'Clicado!';
+        });
+
+        // 2. Mudar o conteúdo da div
+        const botaoMudarConteudo = document.getElementById('botao-mudar-conteudo');
+        const caixa = document.getElementById('caixa');
+        botaoMudarConteudo.addEventListener('click', function() {
+            caixa.innerHTML = '<strong>Conteúdo em negrito</strong>';
+        });
+
+        // 3. Modificar múltiplos estilos do parágrafo
+        const botaoEstilizar = document.getElementById('botao-estilizar');
+        const paragrafo = document.getElementById('meu-paragrafo');
+        botaoEstilizar.addEventListener('click', function() {
+            paragrafo.style.color = 'green';
+            paragrafo.style.fontSize = '24px';
+            paragrafo.style.backgroundColor = 'yellow';
+        });
+    </script>
+
+</body>
+</html>
