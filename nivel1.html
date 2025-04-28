@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício de Seleção</title>
+    <style>
+        /* Estilo inicial para a div */
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: rgb(43, 41, 41);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Seleção por ID -->
+    <h1 id="titulo">Título</h1>
+
+    <!-- 2. Seleção por Classe -->
+    <p class="texto">Este é um parágrafo</p>
+
+    <!-- 3. Seleção por Tag -->
+    <div></div>
+
+    <script>
+        // 1. Selecionar elemento pelo ID e exibir no console
+        const titulo = document.getElementById("titulo");
+        console.log(titulo.textContent);
+
+        // 2. Selecionar elemento pela classe e alterar o texto
+        const paragrafo = document.querySelector(".texto");
+        paragrafo.textContent = "Texto alterado com sucesso!";
+
+        // 3. Selecionar elemento pela tag e mudar a cor de fundo
+        const div = document.querySelector("div");
+        div.style.backgroundColor = "azul";
+    </script>
+
+</body>
+</html>
